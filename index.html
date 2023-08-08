@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="header">
+        <h2>BILL</h2>
+        <h2>SPILL</h2>
+    </div>
+    <div class="main-container">
+        <div class="container">
+            <div class="left-container">
+                <div class="bill">
+                    <label for="bill">Bill</label>
+                    <input type="number" name="bill" id="bill" placeholder="0.0" min="0" value="0">
+                </div>
+                <div class="tip">
+                    <label for="customTip">Select Tip %</label>
+                    <div class="tipBtns">
+                        <button class="tipBtn" onclick="getTipPercent(0.05)">5%</button>
+                        <button class="tipBtn" onclick="getTipPercent(0.1)">10%</button>
+                        <button class="tipBtn" onclick="getTipPercent(0.15)">15%</button>
+                        <button class="tipBtn" onclick="getTipPercent(0.25)">25%</button>
+                        <button class="tipBtn" onclick="getTipPercent(0.5)">50%</button>
+                        <input type="number" id="customTip" placeholder="Custom" min="0" oninput="getTipPercent(value/100)">
+                    </div>
+                </div>
+                <div class="peopleCount">
+                    <label for="people">Number of People</label>
+                    <input type="number" id="people" name="people" placeholder="1" min="1" value="1">
+                    <button id="generateBill" onclick="generateBill()">Generate Bill</button>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="output">
+                    <table>
+                        <tr>
+                            <td><h4>Tip Amount</h4><p>/ person</p></td>
+                            <td><p id="tipAmount">$ 0</p></td>
+                        </tr>
+                        <tr>
+                            <td><h4>Total</h4><p>/ person</p></td>
+                            <td><p id="total">$ 0</p></td>
+                        </tr>
+                    </table>
+                </div>
+                <button id="reset" onclick="reset()">RESET</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
